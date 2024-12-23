@@ -632,6 +632,6 @@ function menuPrincipal() {
     }
   }
 }
-
+//Para ejecutar todo
 // Llamamos a la función menuPrincipal para iniciar el programa.
 menuPrincipal();
