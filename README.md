@@ -110,4 +110,4 @@ Este proyecto está bajo la licencia MIT. Puedes usarlo y modificarlo libremente
 
 ## 📩 Contacto
 
-Para consultas, contáctanos a través de los emails registrados en el sistema.
+Para consultas, contáctanos a través del mail: lucero.crivera@gmail.com
