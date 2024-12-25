@@ -230,7 +230,7 @@ let listadoUsuarios = [];
 
 //a) Implementar una función registrarUsuario(nombre, email) que agregue un
 // nuevo usuario al array usuarios.
-let registrar = function (nombre, email) {
+let registrarUsuario = function (nombre, email) {
   let nuevoUsuario = {
     nombre: nombre,
     email: email,
@@ -253,47 +253,31 @@ function mostrarTodosLosUsuarios(listadoUsuarios) {
 
 //c) Crear una función buscarUsuario(email) que devuelva la información de un
 // usuario dado su email
-function buscarUsuario(emailBuscado) {
-  let todosUsuarios = usuarios; //concatenar nuevos usuarios yusuarios creados
-  let listadoUsuarios = [];
-
-  let buscarUsuarioPorEmail = function (emailBuscado) {
-    let usuarioEncontrado = todosUsuarios.find(
-      (usuario) => usuario.email.toLowerCase() === email.toLowerCase()
-    );
-    if (usuarioEncontrado) {
-      console.log(
-        `usuario encontrado ${usuarioEncontrado.nombre}, ${usuarioEncontrado.email}`
-      );
-    }
-  };
+//buscar el usuario por su email
+function buscarUsuarioPorEmail() {
+  let emailBuscado = prompt("ingresa el email del usuario que buscas: ");
+  let usuarioEncontrado = todosUsuarios.find(usuario => usuario.email.toLocaleLowerCase() === emailBuscado.toLocaleLowerCase());
+  if (usuarioEncontrado) {
+    console.log(`el usuario ${usuarioEncontrado.nombre},${usuarioEncontrado.email} fue encontrado con exito.`);
+  } else {
+    console.log("usuario no encontrado.");
+  }
 }
 
 // d) Implementar una función borrarUsuario(nombre, email) que elimine el usuario seleccionado.
-function borrarUsuario(emailBuscadoBorrarr) {
-  let todosUsuarios = usuarios; //concatenar nuevos usuarios yusuarios creados
-  let listadoUsuarios = [];
-  let buscarUsuarioPorEmail = function (emailBuscadoBorrarr) {
-    let usuarioEncontrado = todosUsuarios.find(
-      (usuario) => usuario.email.toLowerCase() === email.toLowerCase()
-    );
-    if (usuarioEncontrado) {
-      console.log(
-        `usuario encontrado ${usuarioEncontrado.nombre}, ${usuarioEncontrado.email}`
-      );
-      //eliminar usuario (D)
-      let opcion = prompt("quieres eliminar el usuario? si/ no: ");
-      if (opcion.toLowerCase() === "si") {
-        let indice = todosUsuarios.indexOf(usuarioEncontrado);
-        todosUsuarios.splice(indice, 1);
-        console.log(`el usuario ${usuarioEncontrado} fue eliminado con exito.`);
-        return verLista;
-      }
-    } else {
-      console.log("usuario no encontrado.");
-    }
-  };
+//eliminar usuario (D)
+function borrarUsuario() {
+  let emailBuscado = prompt("ingresa el email del usuario que deseas eliminar: ");
+  let usuarioEncontrado = todosUsuarios.find(usuario => usuario.email.toLowerCase() === emailBuscado.toLocaleLowerCase());
+  if (usuarioEncontrado) {
+      let indice = todosUsuarios.indexOf(usuarioEncontrado);
+      todosUsuarios.splice(indice, 1);
+      console.log(`el usuario ${usuarioEncontrado.nombre} fue eliminado con exito.`);
+  } else {
+      console.log(`el usuario no fue encontrado.`)
+  }
 }
+
 
 //Punto 4: Sistema de Préstamos
 
@@ -559,7 +543,7 @@ function menuPrincipal() {
         let email = prompt("ingresa tu email: ");
 
         // Llamar a la función para registrar usuarios
-        registrar(nombre, email);
+        registrarUsuario(nombre, email);
         break;
 
       case 6:
@@ -570,19 +554,11 @@ function menuPrincipal() {
         break;
 
       case 7:
-        let emailBuscado = prompt(
-          "Ingresa el email que buscas o escribe 'salir' para cancelar: "
-        );
-        // Llamar a la función
-        buscarUsuario(emailBuscado);
+        buscarUsuarioPorEmail();
         break;
 
       case 8:
-        let emailBuscadoBorrarr = prompt(
-          "Ingresa el email que buscas o escribe 'salir' o 'lista' para cancelar: "
-        );
-        // Llamar a la función
-        borrarUsuario(emailBuscadoBorrarr);
+        borrarUsuario();
         break;
 
       case 9:
