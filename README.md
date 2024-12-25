@@ -75,7 +75,7 @@ El sistema cuenta con un menú interactivo que ofrece las siguientes funcionalid
 
 1. 🌀 Clonar el repositorio:
    ```bash
-   git clone <https://github.com/LuceroCondoriRivera/BibliotecaADA.git>
+   git clone https://github.com/LuceroCondoriRivera/BibliotecaADA.git
    ```
 2. 🖊️ Abrir el archivo `trabajoPracticoIntegrador.js` en tu editor de código.
 3. ▶️ Ejecutar el programa en la consola:
