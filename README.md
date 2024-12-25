@@ -67,8 +67,7 @@ El sistema cuenta con un menú interactivo que ofrece las siguientes funcionalid
 ## 💻 Requisitos
 
 - Node.js (para ejecutar el programa en consola).
-- Editor de texto/código (Visual Studio Code, Sublime Text, etc.).
-- Navegador moderno para pruebas en entorno web 🖥️.
+- Editor de texto/código (Visual Studio Code).
 
 ---
 
